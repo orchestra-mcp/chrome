@@ -1,0 +1,31 @@
+{
+  "name": "@orchestra/chrome",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Orchestra MCP - Chrome Extension (Side Panel)",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "vite build && BUILD_TARGET=content vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orchestra/shared": "workspace:*",
+    "@orchestra/ui": "workspace:*",
+    "@tanstack/react-query": "^5.0.0",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/chrome": "^0.0.287",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.4.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
+  }
+}

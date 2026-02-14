@@ -1,0 +1,27 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+orchestra-chrome
+
+# Go
+vendor/
+*.test
+*.out
+coverage.txt
+coverage.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated extension output (built by chrome:build)
+resources/chrome/

@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the Chrome plugin into a nested path that matches
+      # the replace directive (replace ../.. => framework root).
+      # Layout: workspace/plugins/chrome/ (this repo) + workspace/ (framework)
+      - uses: actions/checkout@v4
+        with:
+          repository: orchestra-mcp/framework
+          path: workspace
+          fetch-depth: 0
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: workspace/plugins/chrome
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+
+      - uses: goreleaser/goreleaser-action@v6
+        with:
+          version: latest
+          args: release --clean
+          workdir: workspace/plugins/chrome
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

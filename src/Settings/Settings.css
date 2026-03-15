@@ -1,0 +1,268 @@
+/**
+ * Chrome Settings — settings panel for Chrome extension.
+ * Uses theme vars from @orchestra-mcp/theme.
+ */
+
+/* ── SettingsPanel ── */
+
+.chrome-settings {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.chrome-settings__header {
+  padding: 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-contrast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chrome-settings__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-fg-bright);
+  margin: 0;
+}
+
+.chrome-settings__sync {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  transition: opacity 0.2s;
+}
+
+.chrome-settings__content {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+/* ── SettingsGroup ── */
+
+.chrome-settings-group {
+  margin-bottom: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg-alt);
+  overflow: hidden;
+}
+
+.chrome-settings-group__header {
+  padding: 16px;
+  background: var(--color-bg-contrast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chrome-settings-group__header--collapsible {
+  cursor: pointer;
+}
+
+.chrome-settings-group__header--open {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.chrome-settings-group__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-fg-bright);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chrome-settings-group__desc {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  margin-top: 4px;
+}
+
+.chrome-settings-group__chevron {
+  color: var(--color-fg-muted);
+  transition: transform 0.2s;
+}
+
+.chrome-settings-group__chevron--open {
+  transform: rotate(180deg);
+}
+
+.chrome-settings-group__body {
+  padding: 16px;
+}
+
+.chrome-settings-group__empty {
+  font-size: 14px;
+  color: var(--color-fg-muted);
+  text-align: center;
+  margin: 32px 0;
+}
+
+/* ── SettingInput ── */
+
+.chrome-setting {
+  margin-bottom: 16px;
+}
+
+.chrome-setting__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--color-fg-bright);
+}
+
+.chrome-setting__required {
+  color: var(--syntax-red);
+  margin-left: 4px;
+}
+
+.chrome-setting__input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg-alt);
+  color: var(--color-fg);
+  outline: none;
+}
+
+.chrome-setting__input:focus {
+  border-color: var(--color-accent);
+}
+
+.chrome-setting__select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg-alt);
+  color: var(--color-fg);
+  outline: none;
+}
+
+.chrome-setting__select:focus {
+  border-color: var(--color-accent);
+}
+
+.chrome-setting__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.chrome-setting__checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.chrome-setting__checkbox-text {
+  font-size: 14px;
+  color: var(--color-fg);
+}
+
+.chrome-setting__desc {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  margin-top: 4px;
+}
+
+.chrome-setting__color-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.chrome-setting__color-picker {
+  width: 48px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.chrome-setting__range-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.chrome-setting__range {
+  flex: 1;
+}
+
+.chrome-setting__range-value {
+  font-size: 14px;
+  color: var(--color-fg);
+  min-width: 48px;
+}
+
+.chrome-setting__multi-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── EmptyState ── */
+
+.chrome-settings__empty {
+  text-align: center;
+  padding: 48px;
+  color: var(--color-fg-muted);
+}
+
+.chrome-settings__empty-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  opacity: 0.5;
+}
+
+.chrome-settings__empty-title {
+  font-size: 14px;
+}
+
+.chrome-settings__empty-desc {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* ── Compact variant ── */
+
+[data-variant='compact'] .chrome-settings__header {
+  padding: 10px 12px;
+}
+
+[data-variant='compact'] .chrome-settings__title {
+  font-size: 16px;
+}
+
+[data-variant='compact'] .chrome-settings-group__header {
+  padding: 10px 12px;
+}
+
+[data-variant='compact'] .chrome-settings-group__body {
+  padding: 10px 12px;
+}
+
+[data-variant='compact'] .chrome-setting {
+  margin-bottom: 12px;
+}
+
+[data-variant='compact'] .chrome-setting__label {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+[data-variant='compact'] .chrome-setting__input,
+[data-variant='compact'] .chrome-setting__select {
+  padding: 6px;
+  font-size: 12px;
+}

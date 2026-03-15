@@ -1,0 +1,47 @@
+{
+  "name": "@orchestra-mcp/chrome",
+  "version": "1.0.0",
+  "description": "Chrome extension components for Orchestra MCP",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orchestra-mcp/chrome"
+  },
+  "funding": "https://github.com/sponsors/fadymondy",
+  "license": "MIT",
+  "dependencies": {
+    "@orchestra-mcp/ui": "^1.0.0",
+    "@orchestra-mcp/icons": "^1.0.0",
+    "@orchestra-mcp/theme": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "prepublishOnly": "pnpm build"
+  }
+}

@@ -1,0 +1,376 @@
+/**
+ * Chrome Sidebar — full sidebar panel for Chrome extension.
+ * Uses theme vars from @orchestra-mcp/theme.
+ */
+
+/* ── Sidebar root ── */
+
+.chrome-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: var(--color-bg);
+}
+
+/* ── SidebarHeader ── */
+
+.chrome-sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.chrome-sidebar-header__brand {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-fg-bright);
+}
+
+.chrome-sidebar-header__status {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.chrome-sidebar-header__status--connected {
+  background-color: var(--syntax-green);
+}
+
+.chrome-sidebar-header__status--disconnected {
+  background-color: var(--color-fg-dim);
+}
+
+/* ── TopBar ── */
+
+.chrome-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.chrome-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chrome-topbar__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-fg-bright);
+  margin: 0;
+}
+
+.chrome-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chrome-topbar__status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* ── IconNav ── */
+
+.chrome-icon-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 48px;
+  min-width: 48px;
+  padding: 8px 0;
+  background: var(--color-bg-alt);
+  border-right: 1px solid var(--color-border);
+}
+
+.chrome-icon-nav__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.chrome-icon-nav__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chrome-icon-nav__divider {
+  width: 24px;
+  height: 1px;
+  margin: 8px auto;
+  background: var(--color-border);
+}
+
+.chrome-icon-nav__btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.chrome-icon-nav__btn:hover {
+  color: var(--color-fg-bright);
+  background: var(--color-bg-active);
+}
+
+.chrome-icon-nav__btn--active {
+  color: var(--color-accent);
+  background: var(--color-bg-active);
+}
+
+.chrome-icon-nav__badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--syntax-red);
+  color: #fff;
+  font-size: 9px;
+  line-height: 14px;
+  text-align: center;
+}
+
+/* ── ViewTitle ── */
+
+.chrome-view-title {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.chrome-view-title__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+}
+
+.chrome-view-title__label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+  margin: 0;
+}
+
+.chrome-view-title__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chrome-view-title__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.chrome-view-title__action-btn:hover {
+  color: var(--color-fg-bright);
+  background: var(--color-bg-active);
+}
+
+.chrome-view-title__action-btn--active {
+  color: var(--color-accent);
+  background: var(--color-bg-active);
+}
+
+.chrome-view-title__search {
+  padding: 0 12px 8px;
+}
+
+.chrome-view-title__search-input {
+  width: 100%;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  color: var(--color-fg);
+  font-size: 12px;
+  outline: none;
+}
+
+.chrome-view-title__search-input:focus {
+  border-color: var(--color-accent);
+}
+
+/* ── StatusBar ── */
+
+.chrome-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  color: var(--color-fg-muted);
+  font-size: 11px;
+}
+
+.chrome-statusbar__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chrome-statusbar__connection {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chrome-statusbar__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.chrome-statusbar__plugins {
+  color: var(--color-fg-dim);
+}
+
+.chrome-statusbar__sync {
+  color: var(--color-accent);
+}
+
+/* ── SidebarNav ── */
+
+.chrome-sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chrome-sidebar-nav__entry {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: var(--color-fg);
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.chrome-sidebar-nav__entry:hover {
+  background: var(--color-bg-alt);
+}
+
+.chrome-sidebar-nav__entry--active {
+  background: var(--color-bg-active);
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.chrome-sidebar-nav__entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chrome-sidebar-nav__entry-badge {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--syntax-red);
+  color: #fff;
+  font-size: 11px;
+}
+
+/* ── ViewBody ── */
+
+.chrome-view-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chrome-view-body__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+}
+
+.chrome-view-body__placeholder-title {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--color-fg-muted);
+}
+
+.chrome-view-body__placeholder-desc {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--color-fg-dim);
+}
+
+.chrome-view-body__search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  color: var(--color-fg);
+  font-size: 13px;
+  outline: none;
+}
+
+.chrome-view-body__search-input:focus {
+  border-color: var(--color-accent);
+}
+
+/* ── Compact variant ── */
+
+[data-variant='compact'] .chrome-icon-nav {
+  width: 40px;
+  min-width: 40px;
+}
+
+[data-variant='compact'] .chrome-icon-nav__btn {
+  width: 30px;
+  height: 30px;
+}
+
+[data-variant='compact'] .chrome-sidebar-nav__entry {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+[data-variant='compact'] .chrome-statusbar {
+  padding: 2px 8px;
+  font-size: 10px;
+}
